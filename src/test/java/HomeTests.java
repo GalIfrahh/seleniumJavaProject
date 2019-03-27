@@ -17,48 +17,63 @@ public class HomeTests extends Basic {
 	
 	public String time_stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 	
-    
+    	@Test
+	public void login(){
+		
+		HomeScreen.openRedLion();
+			
+		ConnectPage.clickOnHelloRewards_connectBtn();
+				
+		ConnectPage.enterEmail();
+		
+		ConnectPage.enterPassword();
+		
+		ConnectPage.clickOnSignIn();
+		
+		//add assertion
+	}
+	
+	
 	@Test
-	public void redLionReservation() throws Exception {
+	public void redLionReservationFlow(){
 	
 		HomeScreen.openRedLion();
-		System.out.println("opened!!!!");		
-		HomeScreen.clickOnHelloRewards();
+			
+		ConnectPage.clickOnHelloRewards_connectBtn();
 				
-		HomeScreen.enterEmail();
+		ConnectPage.enterEmail();
 		
-		HomeScreen.enterPassword();
+		ConnectPage.enterPassword();
 		
-		HomeScreen.clickOnSignIn();
+		ConnectPage.clickOnSignIn();
 		
-		HomeScreen.enterLocationName();
+		HomePage.enterLocationName();
 		
-		HomeScreen.chooseFirstLocatio();
+		HomePage.chooseFirstLocatio();
 	
-		HomeScreen.clickOnStartDateField();
+		HomePage.clickOnStartDateField();
 		
 		int active_date = HomeScreen.getSelectedStartDateIndex(HomeScreen.getDatePickerValues());
 		
-		HomeScreen.getDatePickerValues().get(active_date + 7).click();
+		HomePage.getDatePickerValues().get(active_date + 7).click();
 		
-		HomeScreen.getDatePickerValues().get(active_date + 8).click();
+		HomePage.getDatePickerValues().get(active_date + 8).click();
 		
-		HomeScreen.clickOnCheckAvailability();
+		HomePage.clickOnCheckAvailability();
 		
-		HomeScreen.clickOnQuickBook();
+		HomePage.clickOnQuickBook();
 				
-		String full_cancellation_text = HomeScreen.getCencelationPolicyText();
+		String full_cancellation_text = OrderSummeryPage.getCencelationPolicyText();
 		
-		if(HomeScreen.HasCancellation(full_cancellation_text)) {
+		if(OrderSummeryPage.HasCancellation(full_cancellation_text)) {
 						
 			setTimeStemp(time_stamp);
 			
-			driverWrapper.takeScreenShot(time_stamp);//"RD_screen2");
+			driverWrapper.takeScreenShot(time_stamp);
+			
 			// perform room reservation 
 		}
-		
-		Thread.sleep(1000);
-		
+				
 	}
 	
 	
