@@ -1,4 +1,19 @@
-@Test
+import static org.junit.Assert.assertEquals;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import PageObjects.PageObjects.HomeScreen;
+
+
+
+public class ConnectTests extends Basic {
+
+
+	public String time_stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+	
+	
+	@Test
 	public void redLionReservationFlow(){
 	
 		HomeScreen.openRedLion();
@@ -39,7 +54,16 @@
 		
 			confirmation_text = ConfirmationPage.getConfirmationText();
 			
-		assertEquals(confirmation_text, prop.getProperty('CONFIRMATION_TEXT'));
+			assertEquals(confirmation_text, prop.getProperty('CONFIRMATION_TEXT'));
+			
+			
+		else{	
+			
+			fail("no cancellation policy");			
+		
 		}
+		
+		
+	     }
 				
 	}
