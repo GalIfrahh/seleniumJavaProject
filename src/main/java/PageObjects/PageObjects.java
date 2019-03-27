@@ -13,11 +13,6 @@ public class PageObjects {
 	public static class HomeScreen extends GenericPageObject{
 		
 		static final String SUT_URL = "https://www.redlion.com/";
-		static final String HELLOW_REWARDS_BUTTON  = "oktaToggleTitle";
-		static final String HELLOW_REWARDS_POP_UP = "//div[@class=\'jBox-container\']/div[2]";
-		static final String EMAIL_FIELD = "oktaToggleEmail";
-		static final String PASSWORD_FIELD = "oktaTogglePassword";
-		static final String SIGN_IN_BTN = "oktaToggleSubmit";
 		static final String LOCATION_FIELD = "globalSearchInput";
 		static final String FIRST_LOCATION = "//ul/li[@class='typeahead__item typeahead__group-cities'][1]";
 		static final String DATE_PICKER_FIELD = "searchStartDate";
@@ -25,9 +20,7 @@ public class PageObjects {
 		static final String ACTIVE_DATE_CLASS_VALUE = "PAselected PAfrom PAactive";
 		static final String CHECK_AVAILABILITY_BTN = "//button[@class='btn-primary waves-effect waves-red check-availability-button']";
 		static final String QUICK_BOOK_BTN = "//button[@class='btn-primary waves-effect waves-red'][text()='Quick Book']";
-		static final String CANCALLATION_POLICY = "//a[text()='Cancellation Policy']";
-		static final String CANCELATION_POPUP = "//div[@class='tipso_bubble top animated fade-in-down']";
-		static final String HAS_CANCELLATION_TEXT = "at least 24 hours prior to arrival to avoid a 1 night";
+		
 
 		
 		public static void openRedLion() {
@@ -37,34 +30,12 @@ public class PageObjects {
 		}
 		
 		
-		public static void clickOnHelloRewards() {
-			
-			driverWrapper.findElementBy(Locators.ID, HELLOW_REWARDS_BUTTON).click();
-		}
-		
 		
 		public static void clickOnHelloRewardsPopup() {
 			
 			driverWrapper.findElementBy(Locators.XPATH, HELLOW_REWARDS_POP_UP).click();
 		}
 		
-		
-		public static void enterEmail() {
-			
-			driverWrapper.findElementBy(Locators.ID, EMAIL_FIELD).sendKeys("liorl@mycheck.co.il");
-		}
-		
-		
-		public static void enterPassword() {
-			
-			driverWrapper.findElementBy(Locators.ID, PASSWORD_FIELD).sendKeys("Lior2311");
-		}
-		
-		
-		public static void clickOnSignIn() {
-			
-			driverWrapper.findElementBy(Locators.ID, SIGN_IN_BTN).click();
-		}
 		
 		
 		public static void enterLocationName() {
@@ -135,6 +106,54 @@ public class PageObjects {
 		}
 		
 		
+	}
+	
+	
+	
+	public static class ConnectPage extends GenericPageObject{
+	
+		
+		static final String HELLOW_REWARDS_BUTTON  = "oktaToggleTitle";
+		static final String HELLOW_REWARDS_POP_UP = "//div[@class=\'jBox-container\']/div[2]";
+		static final String EMAIL_FIELD = "oktaToggleEmail";
+		static final String PASSWORD_FIELD = "oktaTogglePassword";
+		static final String SIGN_IN_BTN = "oktaToggleSubmit";
+		
+		
+		public static void clickOnHelloRewards_connectBtn() {
+			
+			driverWrapper.findElementBy(Locators.ID, HELLOW_REWARDS_BUTTON).click();
+		}
+		
+		
+		public static void enterEmail() {
+			
+			driverWrapper.findElementBy(Locators.ID, EMAIL_FIELD).sendKeys("liorl@mycheck.co.il");
+		}
+		
+		
+		public static void enterPassword() {
+			
+			driverWrapper.findElementBy(Locators.ID, PASSWORD_FIELD).sendKeys("Lior2311");
+		}
+		
+		
+		public static void clickOnSignIn() {
+			
+			driverWrapper.findElementBy(Locators.ID, SIGN_IN_BTN).click();
+		}
+	}
+	
+	
+	public static class OrderSummeryPage extends GenericPageObject{
+		
+		
+		static final String CANCALLATION_POLICY = "//a[text()='Cancellation Policy']";
+		static final String CANCELATION_POPUP = "//div[@class='tipso_bubble top animated fade-in-down']";
+		static final String HAS_CANCELLATION_TEXT = "at least 24 hours prior to arrival to avoid a 1 night";
+		
+		
+		
 		public static String getCencelationPolicyText() throws InterruptedException {
 			
 			driverWrapper.scrollToElement(CANCALLATION_POLICY);
@@ -163,7 +182,6 @@ public class PageObjects {
 			
 			return has_cancellation;
 		}
-
+		
 	}
-	
 }
