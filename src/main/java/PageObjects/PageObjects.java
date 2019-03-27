@@ -1,10 +1,7 @@
 package PageObjects;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.WebElement;
-
 import Infrastructure.GenericPageObject;
 import Infrastructure.Locators;
 
