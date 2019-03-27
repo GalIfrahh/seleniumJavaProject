@@ -17,6 +17,7 @@ public class HomeTests extends Basic {
 	
 	public String time_stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 	
+	
     	@Test
 	public void login(){
 		
@@ -30,7 +31,9 @@ public class HomeTests extends Basic {
 		
 		ConnectPage.clickOnSignIn();
 		
-		//add assertion
+		user_name = ConnectPage.getUserName();
+		
+		assertEquals(user_name, prop.getProperty('EMAIL'))
 	}
 	
 	
@@ -71,7 +74,9 @@ public class HomeTests extends Basic {
 			
 			driverWrapper.takeScreenShot(time_stamp);
 			
-			// perform room reservation 
+			// perform room reservation - needs real payments...
+			
+		assertEquals(confirmation_text, prop.getProperty('CONFIRMATION_TEXT'));
 		}
 				
 	}
