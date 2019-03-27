@@ -15,9 +15,9 @@ public class ReadPropertyFile {
 
 				input = new FileInputStream(propertiesFilePath);
 
-				// load a properties file
 				prop.load(input);
 
+				
 		    } catch (IOException ex) {
 		      
 		    	ex.printStackTrace();
