@@ -1,0 +1,1 @@
+java -jar selenium-server-standalone-3.11.0.jar -role node  -hub http://10.10.80.32:4444/grid/register -port 5555 -browser browserName=chrome,maxInstances=20,seleniumProtocol=WebDriver -maxSession 20
