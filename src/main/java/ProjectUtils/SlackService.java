@@ -5,11 +5,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import javax.imageio.ImageIO;
-
 import org.apache.http.entity.mime.content.FileBody;
-
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
@@ -48,8 +45,7 @@ public class SlackService {
 		
 		try {
 			
-			Thread.sleep(10000);
-			
+		
 			HttpResponse<JsonNode> jsonResponse = Unirest.post("https://slack.com/api/files.upload")
 
 					  .header("accept", "application/json")
