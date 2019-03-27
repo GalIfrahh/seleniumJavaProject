@@ -75,6 +75,8 @@ public class HomeTests extends Basic {
 			driverWrapper.takeScreenShot(time_stamp);
 			
 			// perform room reservation - needs real payments...
+		
+			confirmation_text = ConfirmationPage.getConfirmationText();
 			
 		assertEquals(confirmation_text, prop.getProperty('CONFIRMATION_TEXT'));
 		}
