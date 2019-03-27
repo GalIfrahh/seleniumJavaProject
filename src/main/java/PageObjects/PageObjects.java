@@ -4,9 +4,12 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import Infrastructure.GenericPageObject;
 import Infrastructure.Locators;
+import java.util.Properties;
 
 public class PageObjects {
 	
+	public Properties prop = new Properties();
+
 	public static class HomeScreen extends GenericPageObject{
 		
 		static final String SUT_URL = "https://www.redlion.com/";
@@ -125,13 +128,13 @@ public class PageObjects {
 		
 		public static void enterEmail() {
 			
-			driverWrapper.findElementBy(Locators.ID, EMAIL_FIELD).sendKeys("liorl@mycheck.co.il");
+			driverWrapper.findElementBy(Locators.ID, EMAIL_FIELD).sendKeys(prop.getProperty('EMAIL'));
 		}
 		
 		
 		public static void enterPassword() {
 			
-			driverWrapper.findElementBy(Locators.ID, PASSWORD_FIELD).sendKeys("Lior2311");
+			driverWrapper.findElementBy(Locators.ID, PASSWORD_FIELD).sendKeys(prop.getProperty('PASSWORD'));
 		}
 		
 		
