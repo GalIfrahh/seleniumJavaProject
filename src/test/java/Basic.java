@@ -23,9 +23,9 @@ public class Basic {
 	
 	public WebDriverWrapper driverWrapper;
 	
-  	static final String HUB_BATCH_PATH = "/RedLionAutomation/Grid/startHub.bat";
+  	static final String HUB_BATCH_PATH = "\RedLionAutomation\Grid\startHub.bat";
 
-	static final String NODE_BATCH_PATH = "/RedLionAutomation/Grid/startNode.bat";
+	static final String NODE_BATCH_PATH = "\RedLionAutomation\Grid\startNode.bat";
 
 	public static ReadPropertyFile readProperties = new ReadPropertyFile();
 	
@@ -54,7 +54,7 @@ public class Basic {
 		prop = new Properties();
 
 
-		prop = readProperties.readPropFile(prop, "C:\\Users\\galif\\eclipse-workspace\\RedLionAutomation\\src\\test\\java\\SutProperties\\config.properties");
+		prop = readProperties.readPropFile(prop, "\RedLionAutomation\src\test\java\SutProperties\config.properties");
 	
 	}
 
@@ -96,8 +96,6 @@ public class Basic {
 		
 		slack.uploadImage("\RedLionAutomation\ScreenShots\\" + time_stamp + ".png");
 		
-
-		System.out.println("C:\\Users\\galif\\eclipse-workspace\\RedLionAutomation\\ScreenShots\\" + time_stamp + ".png");
 		
 
 		ProcessUtils.killProcess();
