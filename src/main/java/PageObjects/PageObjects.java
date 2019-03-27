@@ -189,4 +189,21 @@ public class PageObjects {
 		}
 		
 	}
+	
+	
+	
+	public static class ConfirmationPage extends GenericPageObject{
+
+		
+		static final String CONFIRMATION_FIELD = "//div[@class='conf_text_area']";
+		
+		
+	
+		public String getConfirmationText(){
+	
+			driverWrapper.findElementBy(Locators.XPATH, CONFIRMATION_FIELD).getText();
+		}
+		
+	}
+	
 }
