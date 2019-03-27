@@ -14,7 +14,7 @@ public class ConnectTests extends Basic {
 	
 	
 	@Test
-	public void redLionReservationFlow(){
+	public void redLionSanity(){
 	
 		HomeScreen.openRedLion();
 			
