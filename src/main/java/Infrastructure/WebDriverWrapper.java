@@ -1,11 +1,9 @@
 package Infrastructure;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -116,31 +114,24 @@ public class WebDriverWrapper {
 		
 		elementToClear.clear();
 		
-		
-		try {
-			
-			Thread.sleep(1000);
-		
-		
-		} catch(InterruptedException e) {
-			
-		
-			System.out.println(e.getMessage());
-		}
 	}
+	
 	
 	public void close() {
 		remoteWebDriver.close();
 	}
 	
+	
 	public void quit() {
 		remoteWebDriver.quit();
 	}
+	
 	
 	public String getTitle() {
 		
 		return remoteWebDriver.getTitle(); 
 	}
+	
 	
 	public void hover(String elementToHoverValue) {
 		
@@ -171,6 +162,7 @@ public class WebDriverWrapper {
 	}
 	
 	
+	
 	public void scrollToElement(String value) throws InterruptedException {
 		
 		WebElement element = remoteWebDriver.findElement(By.xpath(value));
@@ -189,7 +181,7 @@ public class WebDriverWrapper {
 		File source = sc.getScreenshotAs(OutputType.FILE);
 		
 		
-		FileUtils.copyFile(source, new File("C:\\Users\\galif\\eclipse-workspace\\RedLionAutomation\\ScreenShots\\" + name + ".png"));
+		FileUtils.copyFile(source, new File("\RedLionAutomation\ScreenShots\" + name + ".png"));
 		
 
 		return source;
@@ -197,6 +189,7 @@ public class WebDriverWrapper {
 	}
 	
 	
+						    
 	public WebElement waitForElemToBeClickable(String value) {
 		
 		WebDriverWait wait = new WebDriverWait(remoteWebDriver, 10);
@@ -206,6 +199,7 @@ public class WebDriverWrapper {
 	} 
 	
 	
+						    
 	public boolean waitForInvisibility(String value) {
 		
 		WebDriverWait wait = new WebDriverWait(remoteWebDriver, 10);
@@ -215,6 +209,7 @@ public class WebDriverWrapper {
 	} 
 	
 	
+						    
 	public void MaximizeWIndow() {
 		
 		remoteWebDriver.manage().window().maximize();
