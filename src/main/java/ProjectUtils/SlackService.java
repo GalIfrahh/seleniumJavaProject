@@ -16,7 +16,8 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 
 public class SlackService {
 	
-	static final String SLACK_TOKEN = "";
+	// static final String SLACK_TOKEN = "";
+	
 	public void send_message(String content) throws UnirestException {
 
 		try {
