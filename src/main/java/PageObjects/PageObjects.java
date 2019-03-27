@@ -118,7 +118,7 @@ public class PageObjects {
 		static final String EMAIL_FIELD = "oktaToggleEmail";
 		static final String PASSWORD_FIELD = "oktaTogglePassword";
 		static final String SIGN_IN_BTN = "oktaToggleSubmit";
-		
+		static final String USER_NAME_FIELD = "username";
 		
 		public static void clickOnHelloRewards_connectBtn() {
 			
@@ -142,6 +142,11 @@ public class PageObjects {
 			
 			driverWrapper.findElementBy(Locators.ID, SIGN_IN_BTN).click();
 		}
+		
+		public String getUserName(){
+			
+			driverWrapper.findElementBy(Locators.ID, USER_NAME_FIELD).getText();
+		}	
 	}
 	
 	
