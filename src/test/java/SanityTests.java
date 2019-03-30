@@ -12,21 +12,23 @@ public class SanityTests extends Basic {
 
 
     @Test
-    public void redLionSanity(){
+    public void redLionSanity() throws InterruptedException {
 
         HomePage.openRedLion();
 
         ConnectPage.clickOnHelloRewards_connectBtn();
 
-        ConnectPage.enterEmail();
+        ConnectPage.enterEmail(prop.getProperty("EMAIL"));
 
-        ConnectPage.enterPassword();
+        ConnectPage.enterPassword(prop.getProperty("PASSWORD"));
 
         ConnectPage.clickOnSignIn();
 
-        HomePage.enterLocationName();
 
-        HomePage.chooseFirstLocatio();
+
+        HomePage.enterLocationName(prop.getProperty("CITY_TO_SEARCH"));
+
+        HomePage.chooseFirstLocation();
 
         HomePage.clickOnStartDateField();
 
@@ -40,6 +42,17 @@ public class SanityTests extends Basic {
 
         HomePage.clickOnQuickBook();
 
+
+
+        ConfirmationPage.enterPhoneNumber(prop.getProperty("PHONE_NUMBER"));
+
+        ConfirmationPage.enterPostalCode(prop.getProperty("POSTAL_CODE"));
+
+        ConfirmationPage.clickOnMangePaymentMethods();
+
+        ConfirmationPage.clickOnAddNewCard();
+
+
         String full_cancellation_text = OrderSummeryPage.getCancellationPolicyText();
 
         if(OrderSummeryPage.HasCancellation(full_cancellation_text)) {
@@ -47,10 +60,13 @@ public class SanityTests extends Basic {
             setTimeStemp(time_stamp);
 
             driverWrapper.takeScreenShot(time_stamp);
-
+            
+            
             // perform room reservation - needs real payment methods...
 
+            
             String confirmation_text = ConfirmationPage.getConfirmationText();
+
 
             assertEquals(confirmation_text, prop.getProperty("CONFIRMATION_TEXT"));
         }
