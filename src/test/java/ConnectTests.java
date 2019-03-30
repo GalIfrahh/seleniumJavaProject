@@ -3,9 +3,11 @@ import static org.junit.Assert.assertFalse;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import PageObjects.PageObjects;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import PageObjects.PageObjects.HomeScreen;
+import PageObjects.PageObjects.ConnectPage;
 
 
 
@@ -15,10 +17,10 @@ public class ConnectTests extends Basic {
 	  public String time_stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 	
 	
-    @Test
-    public void login(){
+      @Test
+      public void login(){
 
-          HomeScreen.openRedLion();
+          PageObjects.HomePage.openRedLion();
 
           ConnectPage.clickOnHelloRewards_connectBtn();
 
@@ -28,9 +30,9 @@ public class ConnectTests extends Basic {
 
           ConnectPage.clickOnSignIn();
 
-          user_name = ConnectPage.getUserName();
+          String user_name = ConnectPage.getUserName();
 
-          assertEquals(user_name, prop.getProperty('EMAIL'))
+          assertEquals(user_name, prop.getProperty("EMAIL"));
     }
 
   }
