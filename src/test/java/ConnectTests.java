@@ -24,9 +24,9 @@ public class ConnectTests extends Basic {
 
           ConnectPage.clickOnHelloRewards_connectBtn();
 
-          ConnectPage.enterEmail();
+          ConnectPage.enterEmail(prop.getProperty("EMAIL"));
 
-          ConnectPage.enterPassword();
+          ConnectPage.enterPassword(prop.getProperty("PASSWORD"));
 
           ConnectPage.clickOnSignIn();
 
