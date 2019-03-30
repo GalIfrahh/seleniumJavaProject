@@ -135,17 +135,8 @@ public class PageObjects {
 
 			driverWrapper.findElementBy(Locators.ID, SIGN_IN_BTN).click();
 
-			try {
 
-				Thread.sleep(3000);
-
-
-			} catch (InterruptedException e){
-
-
-				System.out.println(e.getMessage());
-
-			}
+			driverWrapper.waitForElement();
 		}
 
 
