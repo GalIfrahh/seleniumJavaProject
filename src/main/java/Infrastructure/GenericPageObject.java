@@ -1,17 +1,19 @@
 package Infrastructure;
 
+import lombok.*;
+
+import java.util.Properties;
+
+
+@Data
+@NoArgsConstructor
+@Builder
 public class GenericPageObject {
 	
-
-	public static WebDriverWrapper driverWrapper;
 	
+	@Setter @Getter public static WebDriverWrapper driverWrapper;
 
-	public static void setDriver(WebDriverWrapper _driverWrapper) {
-		
-				
-		driverWrapper = _driverWrapper;
-		
-	}
-
+	@Setter @Getter public static Properties prop = null;
+	
 
 }
