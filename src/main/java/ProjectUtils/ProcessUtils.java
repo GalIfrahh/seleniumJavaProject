@@ -3,69 +3,51 @@ package ProjectUtils;
 import java.io.IOException;
 
 
-	public class ProcessUtils {
+
+public class ProcessUtils {
 
 
-		public static Process process;
+
+	public static Process process;
+	
+	public static Runtime runtime = Runtime.getRuntime();
 
 	
-		public static Runtime runtime = Runtime.getRuntime();
+	public static void startGrid(String sh_file_path) {
 
-	
-	
-		public static void startBatchFromCmd(String batchFilePath) {
-
-			try{    
+		try{
 
 
-				process = runtime.exec("cmd /c start " + batchFilePath);				
+			process = runtime.exec(new String[]{"/bin/bash", "-c", sh_file_path});
 
-				
-				process.waitFor();
-				
+			Thread.sleep(3000);
 
-			catch(IOException e){
+		}catch(Exception e){
 
 
-				System.out.println(e.getMessage());
+			System.out.println(e.getMessage());
 
-				
 		}
 
-			catch(InterruptedException e){
-				
-				
-			System.out.println(ex.getMessage());
-
-			}
-		 
-		}
-
-
-
-		public static void killProcess(){
-	
-		process.destroy();
-		
-		}
-
-
-
-		public static void closeCmd(){
-
-			try {
-		
-				runtime.exec("taskkill /im cmd.exe /t /f");
-		
-			} 
-			
-			catch (IOException e){
-
-				
-			System.out.println("io exception");
-				
-			}
-			
 	}
+
+
+
+	public static void killProcess() {
+
+		try {
+
+
+			process = runtime.exec(new String[]{"/bin/bash", "-c", "kill -9 $(lsof -t -i:4444)"});
+
+
+		} catch (IOException e) {
+
+
+			System.out.println("io exception");
+
+		}
+	}
+
 
 }
