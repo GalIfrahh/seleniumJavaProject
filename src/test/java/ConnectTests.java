@@ -10,14 +10,15 @@ import org.openqa.selenium.By;
 import PageObjects.PageObjects.ConnectPage;
 
 
+@Story("Connect flows")
 
 public class ConnectTests extends Basic {
 
-
-	  public String time_stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 	
 	
       @Test
+      @Description("user perform login by email as user name & password")
+      @Severity(SeverityLevel.CRITICAL)
       public void login(){
 
           PageObjects.HomePage.openRedLion();
