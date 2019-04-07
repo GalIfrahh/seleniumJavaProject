@@ -3,7 +3,7 @@ import static org.junit.Assert.assertFalse;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import io.qameta.allure.*;
 import PageObjects.PageObjects;
 import org.junit.Test;
 import org.openqa.selenium.By;
