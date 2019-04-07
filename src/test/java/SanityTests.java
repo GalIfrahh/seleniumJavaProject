@@ -1,18 +1,19 @@
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import io.qameta.allure.*;
 import org.junit.Test;
 import PageObjects.PageObjects.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import static org.junit.Assert.*;
+
+@Story("Sanity")
 
 public class SanityTests extends Basic {
 
 
-    public String time_stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-
 
     @Test
-    public void redLionSanity() throws InterruptedException {
+    @Description("E2E - user make full flow with adding cc")
+    @Severity(SeverityLevel.BLOCKER)
+    public void redLionSanity() {
 
         HomePage.openRedLion();
 
